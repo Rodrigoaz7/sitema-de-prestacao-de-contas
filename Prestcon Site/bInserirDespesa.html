@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="js/global_link.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Juriscon - Prestcon</title>
+  <!-- Bootstrap core CSS-->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Page level plugin CSS-->
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="css/productTable.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.5.0/balloon.min.css">
+  <link href="css/loading.css" rel="stylesheet">
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+
+  <!-- Navigation-->
+  <!-- Começo menu lateral -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+<!--     <div id='loading' style="display: none;"></div> -->
+    <a class="navbar-brand" href="aPrincipal.html">Prestcon</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Inicio">
+          <a class="nav-link" href="aPrincipal.html">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Principal</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Meu Perfil">
+          <a class="nav-link" href="aPerfil.html">
+            <i class="fa fa-user-circle-o"></i>
+            <span class="nav-link-text">Meu Perfil</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Cadastro">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseCads" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-id-card-o"></i>
+            <span class="nav-link-text">Cadastro</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseCads">
+            <li>
+              <a href="aCadastroEscola.html"><span class="fa fa-edit"></span> Cadastrar nova escola</a>
+            </li>            
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Contas Bancárias">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseCB" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-university"></i>
+            <span class="nav-link-text">Contas Bancárias</span>
+            </a>
+            <ul class="sidenav-second-level collapse" id="collapseCB">
+            <li>
+              <a href="bContaBancariaCadastradas.html"><span class="fa fa-edit"></span>Consulta contas</a>
+            </li>           
+            <li>
+              <a href="aCadastramento.html"><span class="fa fa-edit"></span> Cadastrar nova conta</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Vigências">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseVig" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-calendar"></i>
+            <span class="nav-link-text">Vigências</span>
+            </a>
+            <ul class="sidenav-second-level collapse" id="collapseVig">
+            <li>
+              <a href="bVigenciasCadastradas.html"><span class="fa fa-edit"></span> Consulta vigências</a>
+            </li>            
+            <li>
+              <a href="aCadastroVigencia.html"><span class="fa fa-edit"></span> Cadastrar nova vigência</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Fornecedores">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-industry"></i>
+            <span class="nav-link-text">Fornecedores</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseComponents">
+            <li>
+              <a href="bCadastrarFornecedor.html"><span class="fa fa-edit"></span> Cadastrar Fornecedor</a>
+            </li>
+            <li>
+              <a href="bFornecedores.html"><span class="fa fa-industry"></span> Fornecedores</a>
+            </li>
+          </ul>
+        </li>
+        <!--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Orçamentos">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseOrca" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-line-chart"></i>
+            <span class="nav-link-text">Orçamentos</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseOrca">
+            <li>
+              <a href="bOrcamentoGeral.html"><span class="fa fa-globe"></span> Orçamento Geral</a>
+            </li>
+            <li>
+              <a href="bDimensionamento.html"><span class="fa fa-sliders"></span> Dimensionamento</a>
+            </li>
+
+          </ul>
+        </li> -->
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Movimentações">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMovimenta" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-refresh"></i>
+            <span class="nav-link-text">Movimentações</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMovimenta">
+            <!--<li>
+              <a href="bReceita.html"><span class="fa fa-money"></span> Receita</a>
+            </li> -->
+            <li>
+              <a href="bDespesaCadastradas.html"><span class="fa fa-archive"></span> Consultar Despesas</a>
+            </li>             
+            <li>
+              <a href="bInserirDespesa.html"><span class="fa fa-cart-plus"></span> Inserir Despesa</a>
+            </li>
+
+          </ul>
+        </li>
+        <!--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Relatórios">
+          <a class="nav-link" href="aRelatorio.html">
+            <i class="fa fa-fw fa-file-text-o"></i>
+            <span class="nav-link-text">Relatórios</span>
+          </a>
+        </li>-->
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>    
+
+      <ul class="navbar-nav ml-auto">
+
+                <!-- Vigência-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-calendar"></i>
+            <span class="d-lg">Vigência Atual:
+              <span id="VigenciaAtual" class="badge badge-pill badge-primary"></span>
+            </span>
+          </a>
+
+          <div id="divVigencia" class="dropdown-menu margem-menu-mensagens" aria-labelledby="messagesDropdown">
+            <h6 class="dropdown-header">Selecione a Vigência:</h6>
+          </div>
+        </li>
+
+
+
+        <!-- Botao perfil-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-user"></i>
+            <span class="d-lg-none">Perfil</span>
+          </a>
+          <div class="dropdown-menu margem-menu">
+            <h6 class="dropdown-header"><a class="perfil" href="aPerfil.html"><i class="fa fa-user-circle-o"></i> Perfil</a></h6>
+            <h6 class="dropdown-header"><a class="perfil" href="#"><i class="fa fa-cog" aria-hidden="true"></i> Configuração</a></h6>
+            <h6 class="dropdown-header"><a id="logout" class="perfil" href="gLogin.html"><i class="fa fa-power-off" aria-hidden="true"></i> Sair</a></h6>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+<!-- ---------------------------- Começo do corpo ---------------------------- -->
+  <div class="content-wrapper" style="text-align: center;" >
+    <div class="container" id="bodyCorpo">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active">Inserir Despesa</li>
+      </ol>
+
+      <div class="card xmb-3" style="text-align: left; margin: 0px auto;">
+        <div class="card-header">
+          <i class="fa fa-hashtag"></i> Despesa:
+        </div>
+        <div class="list-group list-group-flush small">
+
+          <div class="media">
+            <div class="media-body" style="width: 100%;">
+
+              <div class="cont-form-desp">
+                <form id="Form-Despesa">
+
+                  <div class="form-group col-md-12">
+                    <label class="Tl" for="sel1">Unidade executora:</label>
+                    <select class="form-control" id="SelectSchool">
+                    </select>
+                  </div>
+
+                  <div class="form-group col-md-12">
+                    <label class="Tl" for="sel1">Tipo de Despesa:</label><br>
+                    <input id="radioMat" class="edit-btn-r" type="radio" name="TDespesa" value="Material"> Material
+                    &nbsp
+                    <input id="radioServ" class="edit-btn-r" type="radio" name="TDespesa" value="Serviço"> Serviço
+                   </div>
+
+                  <div class="form-group col-md-12">
+                    <label class="Tl" for="sel1">Tipo de Documento:</label><br>
+                    <input id="radioNf" class="edit-btn-r" type="radio" name="TDoc" value="Nota Fiscal" > Nota Fiscal
+                    &nbsp
+                    <label><input id="radioFat" class="edit-btn-r" type="radio" name="TDoc" value="Fatura" > Fatura</label>
+                    &nbsp
+                    <label><input id="radioRec" class="edit-btn-r" type="radio" name="TDoc" value="Recibo" > Recibo</label>
+                    &nbsp
+                  </div>
+                    
+                  <div class="form-group col-md-12">
+                    <label class="Tl" for="sel1">Tipo de Nota Fiscal:</label>
+                    <br>
+                    <input id="nfm" class="edit-btn-r" type="radio" name="TNFiscal" value="Manual"> Manual
+                    &nbsp
+                    <input id="nfe" class="edit-btn-r" type="radio" name="TNFiscal" value="Eletrônica"> Eletrônica
+                  </div>
+                
+                  <div class="form-group col-md-12">
+                    <label class="Tl" for="sel1">Conta Bancária:</label>
+                    <select class="form-control" id="SelectBanco">
+                    </select>
+                  </div>
+
+                <div class="form-group" id="divPaiFornecedor">
+                  <div class="form-row" style="margin-left: 10px;">
+                    <div class="col-md-11">
+                      <label class="Tl" for="sel1">Fornecedor contratado:</label>
+                      <select class="form-control" id="SelectFornecedor">
+                      </select>
+                    </div>
+                    <div style="margin-left: 2%;">
+                      <img style="cursor: pointer; margin-top: 35px;" src="icon/plus.png" id="plusForn"/>
+                    </div>
+                  </div>
+                  <div class="list-group list-group-flush small" id="divFornecedor" style="display: none; margin: 2%;">
+                  <h5>Cadastro de fornecedor</h5>
+                    <div class="media">
+                      <div class="media-body">
+                        <div class="cont-form-desp">
+                          <div class="form-group col-md-12">
+                            <label for="exampleInputFirstNumber" class="Tl" for="sel1">Nome do Fornecedor:</label>
+                            <input type="text" class="form-control" id="nome_fornecedor" name="NomeForn" id="nome_fornecedor">
+                          </div>
+
+                          <div class="form-group col-md-12">
+                            <label class="Tl" for="sel1">CNPJ:</label>
+                            <input data-mask="00.000.000/0000-00" type="text" class="form-control" name="CNPJ" id="cnpj_fornecedor">
+                          </div>
+
+                          <div class="form-group col-md-12">
+                            <label class="Tl" for="sel1">Email:</label>
+                            <input type="text" class="form-control" name="EMAIL" id="email_fornecedor">
+                          </div>
+
+                          <div class="form-group col-md-12">
+                            <label class="Tl" for="sel1">Telefone:</label>
+                            <input data-mask="(00) 00000-0000" type="text" class="form-control" name="Telefone" id="telefone_fornecedor">
+                          </div>
+
+                          <div class="form-group col-md-12">
+                            <label for="exampleInputFirstNumber" class="Tl" for="sel1">Endereço: </label>
+                            <input type="text" class="form-control" id="endereco_fornecedor" name="Endereco">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+<!--                     <div class="col-md-1" style="float: right;">
+                      <img style="cursor: pointer; margin-top: 35px;" src="icon/plus.png" id="plusForn"/>
+                    </div> -->
+                  </div>
+                </div>
+
+                  <div class="form-group col-md-12">
+                    <label  class="Tl" for="sel1">Número do comprovante de pagamento:</label>
+                    <input type="text" class="form-control" id="num_pag">
+                    </select>
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label  class="Tl" for="sel1">Data do pagamento a ser preenchida pelo diretor:</label>
+                    <input type="date" class="form-control" id="data_pag">
+                    </select>
+                  </div>
+
+                  <!-- <div class="form-group col-md-12">
+                    <label class="Tl" for="sel1">Cheques disponíveis:</label>
+                    <select class="form-control" id="SelectChequeDespesa">
+                    </select>
+                  </div> -->
+
+                  <div class="form-group col-md-12">
+                    <label class="Tl" for="exampleInputFirstNumber">Código de Barras do DANFE:</label>
+                    <input type="text" class="form-control" id="CodigodeBarra" name="CodigodeBarra" readonly="">
+                  </div>
+
+                   <!-- div oculta para preenchimento de documentos manuais -->
+                <div class="form-group col-md-12" id="divOcultaDespesas" style="display: none;">
+                  <table id="tableProduto">
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Nome do produto/serviço adquirido</th>
+                            <th>Quantidade</th>
+                            <th>Valor unitário</th>
+                            <th>Valor total</th>
+                            <th>Código da unidade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyProduto">
+                        <tr>
+                            <td><input name="inputNomeProduto" type="text" class="form-control"></td>
+                            <td><input name="inputUnidadeProduto" type="text" class="form-control" onkeypress='return isNumberKey(event);'></td>
+                            <td><input name="inputValorUnitarioProduto" type="text" class="form-control" onkeypress="return isNumberKeyOrDot(event)"></td>
+                            <td><input name="inputValorTotalProduto" type="text" class="form-control" id="ok" onkeypress="return isNumberKeyOrDot(event)"></td>
+                            <td><input name="inputTipoUnidadeProduto" type="text" class="form-control"></td>
+                        </tr>
+                    </tbody>
+                  </table>
+                  <div id="icons">
+                    <div id="plus1"><img src="icon/plus.png"/></div>
+                    <div id="not"><img src="icon/less.png"/></div>
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+                </div>
+
+                    <div class="box-list container">
+                      <div class="line-list" id="inputnf" data-balloon="" data-balloon-pos="up">
+                        <!-- <div class="item-list1"><i class="fa fa-check-circle"></i></div> -->
+                        <div class="item-list2">Nota Fiscal / Fatura</div>
+                        <div class="item-list3, margem-imagens" style="float: right;">
+                          <label for="InputNf">
+                            <img src="icon/desp/camera.png"/>
+                            <a href="#"><img src="icon/desp/file.png"></a>
+                            <img src="icon/desp/wrong.png" id="imgInputNf"/>
+                          </label>
+                          <input id="InputNf" type="file" style="display: none;"></div>
+                      </div>
+
+                      <div class="line-list" id="inputrec" data-balloon="" data-balloon-pos="up">
+                        <!-- <div class="item-list1"><i class="fa fa-check-circle"></i></div> -->
+                        <div class="item-list2">Recibo de quitação</div>
+                        <div class="item-list3, margem-imagens" style="float: right;">
+                          <label for="InputRec">
+                            <img src="icon/desp/camera.png"/>
+                            <a href="#"><img src="icon/desp/file.png"></a>
+                            <img src="icon/desp/wrong.png" id="imgInputRec"/>
+                          </label>
+                          <input id="InputRec" type="file" style="display: none;"></div>
+                      </div>
+
+                      <div class="line-list" id="inputcomp" data-balloon="" data-balloon-pos="up">
+                        <!-- <div class="item-list1"><i class="fa fa-times-circle"></i></div> -->
+                        <div class="item-list2">Comprovante de pagamento</div>
+                        <div class="item-list3, margem-imagens" style="float: right;">
+                          <label for="InputComprovante">
+                            <img src="icon/desp/camera.png"/>
+                            <a href="#"><img src="icon/desp/file.png"></a>
+                            <img src="icon/desp/wrong.png" id="imgInputComprovante"/>
+                          </label>
+                            <input id="InputComprovante" type="file" style="display: none;"></div>
+                      </div>
+ 
+                      <div class="line-list" id="inputp1" data-balloon="" data-balloon-pos="up">
+                        <!-- <div class="item-list1"><i class="fa fa-check-circle"></i></div> -->
+                        <div class="item-list2">proposta nº1</div>
+                        <div class="item-list3, margem-imagens" style="float: right;">
+                          <label for="InputP1">
+                            <img src="icon/desp/camera.png"/>
+                            <a href="#"><img src="icon/desp/file.png"></a>
+                            <img src="icon/desp/wrong.png" id="imgInputP1"/>
+                          </label>
+                          <input id="InputP1" type="file" style="display: none;">
+                        </div>
+                      </div>
+
+                      <div class="line-list" id="inputp2" data-balloon="" data-balloon-pos="up">
+                        <!-- <div class="item-list1"><i class="fa fa-times-circle"></i></div> -->
+                        <div class="item-list2">proposta nº2</div>
+                        <div class="item-list3, margem-imagens" style="float: right;">
+                          <label for="InputP2">
+                            <img src="icon/desp/camera.png"/>
+                            <a href="#"><img src="icon/desp/file.png"></a>
+                            <img src="icon/desp/wrong.png" id="imgInputP2"/>
+                          </label>
+                          <input id="InputP2" type="file" style="display: none;"></div>
+                      </div>
+
+                      <div class="line-list" id="inputp3" data-balloon="" data-balloon-pos="up">
+                        <!-- <div class="item-list1"><i class="fa fa-check-circle"></i></div> -->
+                        <div class="item-list2">proposta nº3</div>
+                        <div class="item-list3, margem-imagens" style="float: right;">
+                          <label for="InputP3">
+                            <img src="icon/desp/camera.png"/>
+                            <a href="#"><img src="icon/desp/file.png"></a>
+                            <img src="icon/desp/wrong.png" id="imgInputP3"/>
+                          </label>
+                          <input id="InputP3" type="file" style="display: none;"></div>
+                      </div>
+
+
+                      <div class="line-list" id="inputoutros" data-balloon="" data-balloon-pos="up">
+                        <div class="item-list2">Outros documentos</div>
+                        <div class="item-list3, margem-imagens" style="float: right;">
+                          <label for="InputOutros">
+                            <img src="icon/desp/camera.png"/>
+                            <a href="#"><img src="icon/desp/file.png"></a>
+                            <img src="icon/desp/wrong.png" id="imgInputOutros"/>
+                          </label>
+                          <input id="InputOutros" type="file" style="display: none;"></div>
+                      </div>
+                      <div class="line-list">
+                        <div class="load-3" id="loadingmessage" style="padding-left: 6%; display: none;">
+                          <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                  <ul id="mensagens-erro"></ul>
+                  <div class="row justify-content-md-center">
+                    <button id="botaoDespesa" class=" btn btn-primary justify-content-center" style="margin: 0px auto;">Concluir
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- /.container-fluid-->
+  <!-- /.content-wrapper-->
+  <footer class="sticky-footer">
+    <div class="container">
+      <div class="text-center">
+        <small>© 2017 - PRESTCON</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fa fa-angle-up"></i>
+  </a>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Page level plugin JavaScript-->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin.min.js"></script>
+  <!-- Custom scripts for this page-->
+  <script src="js/sb-admin-datatables.min.js"></script>
+  <script src="js/sb-admin-charts.min.js"></script>
+  <script src="js/funcoes_despesas.js"></script>
+  <script src="js/requisicoes_despesas.js"></script>
+  <script src="js/mask-cpf-cnpj.js"></script>
+  <script src="js/requisicoes_logout.js"></script>
+  <script src="js/requisicao_vigencias.js"></script>
+
+</body>
+</html>

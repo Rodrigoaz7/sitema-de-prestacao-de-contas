@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="js/global_link.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Juriscon - Prestcon</title>
+  <!-- Bootstrap core CSS-->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark">
+  <div class="container">
+    <div class="card card-register mx-auto mt-5">
+      <div class="card-header">Prestcon - Registrando uma Conta</div>
+      <div class="card-body">
+        <form id = "form-diretor">
+          <div class="form-group">
+            <h5>Cadastro Diretor e Escola</h5>
+            <h6>Parte 1 - Cadastro Diretor</h6>
+            <div class="form-row">
+              <div class="col-md-6">
+                <label for="nome">Nome do diretor</label>
+                <input id="nome" name="nome" type="text" class="form-control">
+              </div>
+<!--               <div class="col-md-6">
+                <label for="nome">CPF</label>
+                <input id="username" name="username" type="text" class="form-control">
+              </div> -->
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <label for="exampleInputPassword1">Senha</label>
+                <input name="Senha" id="Senha" class="form-control" type="password">
+              </div>
+              <div class="col-md-6">
+                <label for="exampleConfirmPassword">Confirme Senha</label>
+                <input name="ConfirmeSenha" id="ConfirmeSenha" class="form-control" type="password">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for = "EMail">E-Mail</label>
+            <input name="EMail" id="EMail" class="form-control" type="text" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <label for="exampleInputCPF1">CPF</label>
+                <input data-mask="000.000.000-00" name="CPF" id="CPF" class="form-control"  type="text" aria-describedby="CPFHelp">                
+              </div>
+              <div class="col-md-6">
+                <label for="exampleInputEmail1">Telefone</label>
+                <input data-mask="(00)00000-0000" name="Telefone" id="Telefone" class="form-control" type="text" aria-describedby="phoneHelp">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for = "Vigencia">Vigência</label>
+            <div class="form-row">
+              <div class="col-md-6">
+                  <label for="sel1">De: </label>
+                  <input type="date" name="datainicial">                
+              </div>
+              <div class="col-md-6">
+                <label for="sel1">Até: </label>
+                <input type="date" name="datafinal">                
+              </div>
+            </div>
+          </div>
+
+           <h6>Parte 2 - Cadastro Escola</h6>
+
+<!--           <div class="form-group">
+            <label for="exampleInputEscola">Tipo da Escola:</label>
+            <div class="form-row">
+              <div class="col-md-6">
+                <input type="radio" name="escola" value="Estadual"> Estadual
+              </div>
+              <div class="col-md-6">
+                <input type="radio" name="escola" value="Municipal"> Municipal
+              </div>
+            </div>
+          </div> -->
+        <div class="form-group">
+          <label for="exampleInputEscola">Nome da unidade executora</label>
+          <input class="form-control" name="nomeEscola" id="nomeEscola" type="text" aria-describedby="codigoHelp">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEscola">CNPJ</label>
+          <input data-mask="00.000.000/0000-00" class="form-control" id="cnpj" type="text" aria-describedby="codigoHelp">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEscola">Código da unidade executora</label>
+          <input class="form-control" id="code_exec" type="text" aria-describedby="codigoHelp">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEscola">Classificação da Unidade:</label><br>
+          <input type="radio" name="class" value="municipal" id="radMun"> Municipal<br>
+          <input type="radio" name="class" value="estadual" id="radEst"> Estadual<br>
+        </div>
+        <div class="form-group" id="divEstados">
+          <label for="exampleInputEscola">Estado</label>
+          <select class="form-control" id="estados" aria-describedby="codigoHelp">
+            <option value=""></option>
+          </select>
+        </div>
+        <div class="form-group" id="divCidades">
+          <label for="exampleInputEscola">Cidade</label>
+          <select class="form-control" id="cidades" aria-describedby="codigoHelp"></select>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEscola">Tipo da Unidade:</label><br>
+          <input type="checkbox" name="escola" value="Creche"> Creche<br>
+          <input type="checkbox" name="escola" value="Pré-Escola"> Pré-Escola<br>
+          <input type="checkbox" name="escola" value="Escola"> Escola
+        </div>
+          <ul id="mensagens-erro"></ul>
+          <button id ="botao-add-diretor" class = "btn btn-md btn-primary btn-block">Registrar</button>  
+        </form>
+      </div>
+      <div class="text-center">
+          <a class="d-block small mt-3" href="gLogin.html">Pagina de Login</a>
+          <a class="d-block small" href="gSenha.html">Esqueceu a senha ?</a>
+          <br>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="js/requisicoes.js"></script>
+  <script src="js/mask-cpf-cnpj.js"></script>
+</body>
+
+</html>

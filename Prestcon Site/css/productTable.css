@@ -1,0 +1,144 @@
+@import "compass/css3";
+@import "compass/css3";
+@import url(https://fonts.googleapis.com/css?family=Patua+One|Open+Sans);
+#icons {
+    width: auto;
+    float: right;
+    margin-top: 1%;
+}
+
+#plus {
+    float: left;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+#plus1 {
+    float: left;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+#not {
+    float: left;
+    cursor: pointer;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background: #353a40;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    background: #fff;
+    border-radius: 5px;
+    margin: auto;
+    box-shadow: (0px 0px 5px rgba(0, 0, 0, 0.3));
+}
+
+thead {
+    border-radius: 15px;
+}
+
+thead th {
+    font-family: 'Patua One', cursive;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    text-shadow: (1px 1px 0px rgba(0, 0, 0, 0.5));
+    text-align: left;
+    padding: 20px;
+    margin: auto;
+    
+    background-color: #343a40;
+    /*background-image: (linear-gradient(#646f7f, #4a5564));*/
+    border-top: 1px solid #858d99;
+    &:first-child {
+        border-top-left-radius: (5px);
+    }
+    &:last-child {
+        border-top-right-radius: (5px);
+    }
+}
+
+tbody tr td {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #5f6062;
+    font-size: 13px;
+    padding: 20px 10px 10px 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:nth-child(2n) {
+    background: #f0f3f5;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+    &:first-child {
+        border-bottom-left-radius: (5px);
+    }
+    &:last-child {
+        border-bottom-right-radius: (5px);
+    }
+}
+
+tbody:hover>tr td {
+    opacity: (0.5);
+    /* uncomment for blur effect */
+    /* color:transparent;
+  @include text-shadow(0px 0px 2px rgba(0,0,0,0.8));*/
+}
+
+tbody:hover>tr:hover td {
+    text-shadow: (none);
+    color: #2d2d2d;
+    opacity: (1.0);
+}
+
+.ws-css-table {
+    display: table;
+}
+
+.ws-css-table-tr {
+    display: table-row;
+}
+
+.ws-css-table-td {
+    display: table-cell;
+    border: 1px solid #000;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#divFilter {
+    background-color: #343a40;
+    margin-top: 1%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: white;
+    font-size: 13px;
+    padding: 20px 10px 10px 10px;
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: .25rem;
+}
+
+#fornecedor_sel,
+#despesa_sel,
+#conta_sel,
+#documento_sel {
+    background-color: transparent;
+    color: white;
+    border: none;
+    width: 100%;
+}

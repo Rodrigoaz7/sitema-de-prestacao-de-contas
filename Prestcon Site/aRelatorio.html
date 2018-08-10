@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="js/requisicoes_logout.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Juriscon - Prestcon</title>
+  <!-- Bootstrap core CSS-->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Page level plugin CSS-->
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Navigation-->
+  <!-- Começo menu lateral -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="aPrincipal.html">Prestcon</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Inicio">
+          <a class="nav-link" href="aPrincipal.html">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Principal</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Meu Perfil">
+          <a class="nav-link" href="aPerfil.html">
+            <i class="fa fa-user-circle-o"></i>
+            <span class="nav-link-text">Meu Perfil</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Cadastro">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseCads" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-id-card-o"></i>
+            <span class="nav-link-text">Cadastro</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseCads">
+            <li>
+              <a href="aCadastroEscola.html"><span class="fa fa-edit"></span> Cadastrar nova escola</a>
+            </li>            
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Contas Bancárias">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseCB" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-university"></i>
+            <span class="nav-link-text">Contas Bancárias</span>
+            </a>
+            <ul class="sidenav-second-level collapse" id="collapseCB">
+            <li>
+              <a href="bContaBancariaCadastradas.html"><span class="fa fa-edit"></span>Consulta contas</a>
+            </li>           
+            <li>
+              <a href="aCadastramento.html"><span class="fa fa-edit"></span> Cadastrar nova conta</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Vigências">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseVig" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-calendar"></i>
+            <span class="nav-link-text">Vigências</span>
+            </a>
+            <ul class="sidenav-second-level collapse" id="collapseVig">
+            <li>
+              <a href="bVigenciasCadastradas.html"><span class="fa fa-edit"></span> Consulta vigências</a>
+            </li>            
+            <li>
+              <a href="aCadastroVigencia.html"><span class="fa fa-edit"></span> Cadastrar nova vigência</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Fornecedores">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-industry"></i>
+            <span class="nav-link-text">Fornecedores</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseComponents">
+            <li>
+              <a href="bCadastrarFornecedor.html"><span class="fa fa-edit"></span> Cadastrar Fornecedor</a>
+            </li>
+            <li>
+              <a href="bFornecedores.html"><span class="fa fa-industry"></span> Fornecedores</a>
+            </li>
+          </ul>
+        </li>
+        <!--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Orçamentos">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseOrca" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-line-chart"></i>
+            <span class="nav-link-text">Orçamentos</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseOrca">
+            <li>
+              <a href="bOrcamentoGeral.html"><span class="fa fa-globe"></span> Orçamento Geral</a>
+            </li>
+            <li>
+              <a href="bDimensionamento.html"><span class="fa fa-sliders"></span> Dimensionamento</a>
+            </li>
+
+          </ul>
+        </li> -->
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Movimentações">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMovimenta" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-refresh"></i>
+            <span class="nav-link-text">Movimentações</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMovimenta">
+            <!--<li>
+              <a href="bReceita.html"><span class="fa fa-money"></span> Receita</a>
+            </li> -->
+            <li>
+              <a href="bDespesaCadastradas.html"><span class="fa fa-archive"></span> Consultar Despesas</a>
+            </li>             
+            <li>
+              <a href="bInserirDespesa.html"><span class="fa fa-cart-plus"></span> Inserir Despesa</a>
+            </li>
+
+          </ul>
+        </li>
+        <!--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Relatórios">
+          <a class="nav-link" href="aRelatorio.html">
+            <i class="fa fa-fw fa-file-text-o"></i>
+            <span class="nav-link-text">Relatórios</span>
+          </a>
+        </li> -->
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>    
+
+      <ul class="navbar-nav ml-auto">
+
+                <!-- Vigência-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-calendar"></i>
+            <span class="d-lg">Vigência Atual:
+              <span id="VigenciaAtual" class="badge badge-pill badge-primary"></span>
+            </span>
+          </a>
+
+          <div id="divVigencia" class="dropdown-menu margem-menu-mensagens" aria-labelledby="messagesDropdown">
+            <h6 class="dropdown-header">Selecione a Vigência:</h6>
+          </div>
+        </li>
+
+
+
+        <!-- Botao perfil-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-user"></i>
+            <span class="d-lg-none">Perfil</span>
+          </a>
+          <div class="dropdown-menu margem-menu">
+            <h6 class="dropdown-header"><a class="perfil" href="aPerfil.html"><i class="fa fa-user-circle-o"></i> Perfil</a></h6>
+            <h6 class="dropdown-header"><a class="perfil" href="#"><i class="fa fa-cog" aria-hidden="true"></i> Configuração</a></h6>
+            <h6 class="dropdown-header"><a id="logout" class="perfil" href="gLogin.html"><i class="fa fa-power-off" aria-hidden="true"></i> Sair</a></h6>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+<!-- ---------------------------- Começo do corpo ---------------------------- -->
+
+  <div class="content-wrapper" style="text-align: center;">
+
+
+
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active">Relatório</li>
+      </ol>
+      <div id="Cad-Banco" class="row">
+        <div class="col-md-6">
+          <a class = "btn btn-lg btn-warning btn-block j-none-bt" href="#Penden" data-toggle="collapse" aria-expanded="false" aria-controls="Cad-CB" style="color: white;"> Pendências</a>
+        </div>
+
+        <div class="col-md-6">
+          <a class = "btn btn-lg btn-warning btn-block j-none-bt" href="#Audit" data-toggle="collapse" aria-expanded="false" aria-controls="Cad-CB" style="color: white;"> Auditoria</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container collapse jb-1" style="margin-top: 10px;" id="Penden" >
+      <div class="card mb-3" style="text-align: left; width: 80%; margin: 0px auto;">
+        <div class="card-header">
+          <i class="fa fa-hashtag"></i> Lista de Pendências</div>
+          <div class="list-group list-group-flush small">
+            <a class="list-group-item list-group-item-action" href="#">
+              <div class="media">
+                <div class="media-body">
+                  <i class="fa fa-asterisk">&nbsp</i>Upload de documentos<br>
+                  <img style="float: right" src="icon/alert.png">
+                  <strong>Comprovante da compra.</strong>
+                  <div class="text-muted smaller">Compra de Produtos - 23/05/2017</div>
+                </div>
+              </div>
+            </a>
+            <a class="list-group-item list-group-item-action" href="#">
+              <div class="media">
+                <div class="media-body">
+                  <i class="fa fa-asterisk">&nbsp</i>Dados do fornecedor<br>
+                  <img style="float: right" src="icon/alert.png">
+                  <strong>Certidão de regularidade fiscal.</strong>
+                  <div class="text-muted smaller">Compra de Produtos - 23/05/2017</div>
+                </div>
+              </div>
+            </a>
+            <a class="list-group-item list-group-item-action" href="#">
+              <div class="media">
+                <div class="media-body">
+                  <i class="fa fa-asterisk">&nbsp</i>Upload de documentos<br>
+                  <img style="float: right" src="icon/alert.png">
+                  <strong>Comprovante da compra.</strong>
+                  <div class="text-muted smaller">Compra de Produtos - 23/05/2017</div>
+                </div>
+              </div>
+            </a>
+            <a class="list-group-item list-group-item-action" href="#">
+              <div class="media">
+                <div class="media-body">
+                  <i class="fa fa-asterisk">&nbsp</i>Dados do fornecedor<br>
+                  <img style="float: right" src="icon/alert.png">
+                  <strong>Certidão de regularidade fiscal.</strong>
+                  <div class="text-muted smaller">Compra de Produtos - 23/05/2017</div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+        </div>
+      </div>
+
+
+      <div class="container collapse jb-2" style="margin-top: 10px;" id="Audit">
+        <div class="card mb-3" style="text-align: left; width: 80%; margin: 0px auto;">
+          <div class="card-header">
+            <i class="fa fa-hashtag"></i> Lista de Auditoria
+          </div>
+          <div class="list-group list-group-flush small">
+            <a class="list-group-item list-group-item-action" href="#">
+              <div class="media">
+                <div class="media-body">
+
+
+                  <div class="card mb-3" style="text-align: left; width: 99%; margin: 0px auto;">
+                    <div class="card-header">
+                      <h5><i class="fa fa-asterisk">&nbsp</i>Item: Certidão Municipal</h5>
+                      <br>
+                      <form>
+                        <div class="form-group col-md-12">
+                          <label for="sel1">Documento Válido:</label>
+                          <div class="radio">
+                            <label><input class="edit-btn-r" type="radio" name="gender" value="male" checked> Sim</label>&nbsp&nbsp&nbsp
+                            <label><input class="edit-btn-r" type="radio" name="gender" value="male" checked> Não</label>
+                          </div>
+                        </div>
+                      </form>
+                      <form>
+                        <div class="form-group col-md-12">
+                          <label for="sel1">Resalvas:</label>
+                          <div class="radio">
+                            <label><input class="edit-btn-r" type="radio" name="gender" value="male" checked> Sim</label>&nbsp&nbsp&nbsp
+                            <label><input class="edit-btn-r" type="radio" name="gender" value="male" checked> Não</label>
+                          </div>
+                        </div>
+                      </form>
+                      <form>
+                        <div class="form-group col-md-12">
+                          <label for="sel1">Comentários:</label>
+                          <div class="radio">
+                            <label><input class="edit-btn-r" type="radio" name="gender" value="male" checked> Sim</label>&nbsp&nbsp&nbsp
+                            <label><input class="edit-btn-r" type="radio" name="gender" value="male" checked> Não</label>
+                          </div>
+                        </div>
+                      </form>
+                      <form>
+                        <div class="form-group col-md-12">
+                          <label for="comment">Comentários:</label>
+                          <textarea class="form-control" rows="5" id="comment"></textarea>
+                        </div>
+                      </form>
+                      <button class="btn btn-secondary col-md-12">OK</button>
+                    </div>
+                  </div>
+
+
+                  <div class="card mb-3" style="text-align: left; width: 99%; margin: 0px auto;">
+                    <div class="card-header">
+                      <h5><i class="fa fa-asterisk">&nbsp</i>Item: Certidão Municipal</h5>
+                      <br>
+                      <form>
+                        <div class="form-group col-md-12">
+                          <label for="sel1">Documento Válido:</label>
+                          <div class="radio">
+                            <label><input class="edit-btn-r" type="radio" name="gender" value="male" checked> Sim</label>&nbsp&nbsp&nbsp
+                            <label><input class="edit-btn-r" type="radio" name="gender" value="male" checked> Não</label>
+                          </div>
+                        </div>
+                      </form>
+                      <form>
+                        <div class="form-group col-md-12">
+                          <label for="sel1">Resalvas:</label>
+                          <div class="radio">
+                            <label><input class="edit-btn-r" type="radio" name="gender" value="male" checked> Sim</label>&nbsp&nbsp&nbsp
+                            <label><input class="edit-btn-r" type="radio" name="gender" value="male" checked> Não</label>
+                          </div>
+                        </div>
+                      </form>
+                      <form>
+                        <div class="form-group col-md-12">
+                          <label for="sel1">Comentários:</label>
+                          <div class="radio">
+                            <label><input class="edit-btn-r" type="radio" name="gender" value="male" checked> Sim</label>&nbsp&nbsp&nbsp
+                            <label><input class="edit-btn-r" type="radio" name="gender" value="male" checked> Não</label>
+                          </div>
+                        </div>
+                      </form>
+                      <form>
+                        <div class="form-group col-md-12">
+                          <label for="comment">Comentários:</label>
+                          <textarea class="form-control" rows="5" id="comment"></textarea>
+                        </div>
+                      </form>
+                      <button class="btn btn-secondary col-md-12">OK</button>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>© 2017 - PRESTCON</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="js/global_link.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Page level plugin JavaScript-->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin.min.js"></script>
+  <!-- Custom scripts for this page-->
+  <script src="js/sb-admin-datatables.min.js"></script>
+  <script src="js/sb-admin-charts.min.js"></script>
+  <script src="js/requisicao_vigencias.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("[href='#Penden']").click(function(){
+        console.log('TOMELE')
+        $("#Audit").collapse('hide');
+        $("a[href='#Penden']").addClass("j-active-bt");
+        $("a[href='#Audit']").removeClass("j-active-bt");
+
+      });
+      $("[href='#Audit']").click(function(){
+        $("#Penden").collapse('hide');
+        $("a[href='#Audit']").addClass("j-active-bt");
+        $("a[href='#Penden']").removeClass("j-active-bt");
+      });
+    });
+  </script>
+</body>
+</html>

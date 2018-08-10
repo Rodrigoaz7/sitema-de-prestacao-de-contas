@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="js/global_link.js"></script>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Juriscon - Prestcon</title>
+  <!-- Bootstrap core CSS-->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Page level plugin CSS-->
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+</head>
+<body class="index-body">
+
+	<div class="row justify-content-center index-box-1">
+
+		<div class="align-self-center col-md-10 index-box-2 container">
+			<h1>
+				<a class="typewrite" data-period="2000" data-type='["Sistema de Prestação de contas Prestcon Digital."]'>
+					<span class="wrap"></span>
+				</a>
+			</h1>
+
+			<br><br><br>
+
+			<div class="row justify-content-md-center">
+				<div class="col-md-4" style="margin-top: 10px">
+					<a class="btn btn-lg btn-primary btn-block" href="gLogin.html" data-toggle="collapse" aria-expanded="false" aria-controls="Total"
+					style="color: white;">Log-in</a>
+				</div>
+				<br>
+<!-- 				<div class="col-md-4" style="margin-top: 10px">
+					<a class="btn btn-lg btn-primary btn-block" href="aPrincipal.html" data-toggle="collapse" aria-expanded="false" aria-controls="Total"
+					style="color: white;">Principal</a>
+				</div> -->
+			</div>
+
+		</div>
+	</div>
+
+
+<script>
+	var TxtType = function(el, toRotate, period) {
+  
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+  
+};
+
+TxtType.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+  
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring (0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring (0, this.txt.length + 1);
+  }
+  
+  this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+  
+  var that = this;
+  var delta = 200 - Math.random() * 100;
+  
+  if (this.isDeleting) {
+    delta /= 2;
+  }
+  
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  };
+  
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+  
+};
+
+window.onload = function() {
+  
+  var elements = document.getElementsByClassName('typewrite');
+  for (var i=0; i < elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-type');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtType(elements[i], JSON.parse(toRotate), period);
+    };
+  };
+  
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+  document.body.appendChild(css);
+  
+};
+
+
+</script>
+
+</body>
+</html>

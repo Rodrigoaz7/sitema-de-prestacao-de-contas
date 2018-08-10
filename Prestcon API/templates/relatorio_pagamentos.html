@@ -1,0 +1,192 @@
+{% extends "easy_pdf/base.html" %}
+{% block extra_style %}
+    <meta charset="UTF-8">
+    <style type="text/css">
+        @page {
+            margin-left: 1cm;
+            margin-right: 1cm;
+            margin-top: 2.5cm;
+            margin-bottom: 2cm;
+        }
+        body {
+            font-family: "Times New Roman", "sans-serif";
+            color: #333333;
+        }
+        div {
+            color: black;
+            float: left;
+        }
+        #autenticacaotable td {
+            border: none;
+        }
+        #autenticacaotable tr {
+            border: none;
+        }
+        #autenticacaotable p {
+            text-align: center;
+        }
+        #header tr {
+            padding: 1%;
+        }
+        #header {
+            font-size: 10pt;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <table id="header" border="1" cellpadding="12" class="table table-bordered">
+        <tr>
+            <td align="center" valign="center" colspan="3">
+                <h4>Logo</h4>
+            </td>
+            <td align="center" valign="center" colspan="6">
+                <h3>PRESTAÇÃO DE CONTAS</h3>
+                <h5>RELAÇÃO DE PAGAMENTOS EFETUADOS</h5>
+            </td>
+            <td align="center" valign="center" colspan="3">
+                <br>
+                <h3>ANEXO</h3>
+                <h1>9</h1>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    
+    <table border="1" cellpadding="12" class="table table-bordered">
+        <tr>
+            <td align="left" valign="center" colspan="5"> 
+                1 - NOME DO ÓRGÃO OU ENTIDADE CONVENENTE 
+                <p>{{ nome_orgao }}</p>
+            </td>
+            <td align="left" valign="center" colspan="1"> 
+                2 – UF 
+                <p>{{ uf }}</p>
+            </td>
+            <td align="left" valign="center" colspan="3"> 
+                3 - Nº DO CONVÊNIO / ANO 
+                <p>{{ num_convenio }}</p>
+            </td>
+            <td align="left" valign="center" colspan="3"> 
+                4 - TIPO DE PRESTAÇÃO DE CONTAS
+                <p>{{ tipo }}</p>
+            </td>
+        </tr>
+    </table>
+
+    <table border="1" cellpadding="12" class="table table-bordered">
+        <tr>
+            <td align="left" valign="center" colspan="3"> 
+                5 - Nº DO PROCESSO DE CONCESSÃO 
+                <p>{{ num_processo }}</p>
+            </td>
+            <td align="left" valign="center" colspan="3">
+                 6 - CNPJ 
+                <p>{{ cnpj }}</p>
+             </td>
+            <td align="left" valign="center" colspan="3"> 
+                7 - Nº DE PARCELA 
+                <p>{{ num_parcela }}</p>
+            </td>
+            <td align="left" valign="center" colspan="3"> 
+                8 - EXERCÍCIO 
+                <p>{{ exercicio }}</p>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table border="1" cellpadding="12" class="table table-bordered">
+        <tr>
+            <td align="center" valign="center" colspan="1"> 
+            9 - Nº DE ORDEM 
+            <p>{{ fornecedor.pk }}</p>
+            </td>
+            <td align="center" valign="center" colspan="3"> 
+                10 - NOME DO FAVORECIDO / CNPJ OU CPF 
+                <p>{{ fornecedor.cnpj }}</p>
+            </td>
+            <td align="center" valign="center" colspan="1"> 
+                11 - LICIT. 
+                <p></p>
+            </td>
+            <td align="center" valign="center" colspan="3">
+                <table border="0" class="table table-bordered">
+                    <tr>12 – DOCUMENTO
+                        <td align="center" valign="center" colspan="1">12.1 - TIPO</td>
+                        <td align="center" valign="center" colspan="1">12.2 - NÚMERO</td>
+                        <td align="center" valign="center" colspan="1">12.3 - DATA</td>
+                    </tr>
+                </table>
+            </td>
+            <td align="center" valign="center" colspan="4">
+                <table border="0" class="table table-bordered">
+                    <tr>13 – PAGAMENTO
+                        <td align="center" valign="center" colspan="1">13.1 - Nº CH / OB</td>
+                        <td align="center" valign="center" colspan="1">13.2 - DATA</td>
+                        <td align="center" valign="center" colspan="1">13.3 – NAT. DESPESA</td>
+                        <td align="center" valign="center" colspan="1">13.4 – VALOR R$ 1,00</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="center" colspan="1"> </td>
+            <td align="left" valign="center" colspan="3"> </td>
+            <td align="left" valign="center" colspan="1"> </td>
+            <td align="left" valign="center" colspan="3"> </td>
+            <td align="left" valign="center" colspan="4"> </td>
+        </tr>
+    </table>
+
+    <table border="1" cellpadding="12" class="table table-bordered">
+        <tr>
+            <td align="left" valign="center" colspan="1"> 14 - TOTAL </td>
+            <td align="left" valign="center" colspan="10">....................... </td>
+            <td align="left" valign="center" colspan="1"> </td>
+        </tr>
+        <tr>
+            <td align="left" valign="center" colspan="1"> 15 - TOTAL ACUMULADO </td>
+            <td align="left" valign="center" colspan="10">....................... </td>
+            <td align="left" valign="center" colspan="1"> </td>
+        </tr>
+    </table>
+
+    <table border="1" cellpadding="12" class="table table-bordered" id="autenticacaotable">
+        <tr>
+            <td align="left" valign="center" colspan="2"> 
+                <p>16 – AUTENTICAÇÃO</p>
+                <p>__/__/____</p>
+            </td>
+            <td align="center" valign="center" colspan="3">
+            ________________________________________
+            NOME DO TÉCNICO RESPONSÁVEL PELA EXECUÇÃO
+            </td>
+            <td align="center" valign="center" colspan="4"> 
+            __________________________________________________________
+            NOME DO RESPONSÁVEL PELA PRESTAÇÃO DE CONTAS
+            </td>
+            <td align="center" valign="center" colspan="3"> 
+            _________________________________________
+            NOME DO DIRIGENTE OU DO SEU REPRESENTANTE LEGAL
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="center" colspan="2"></td>
+            <td align="center" valign="center" colspan="3">
+            ________________________________________
+            ASSINATURA DO TÉCNICO RESPONSÁVEL PELA EXECUÇÃO
+            </td>
+            <td align="center" valign="center" colspan="4"> 
+            __________________________________________________________
+            ASSINATURA DO RESPONSÁVEL PELA PRESTAÇÃO DE CONTAS
+            </td>
+            <td align="center" valign="center" colspan="3"> 
+            _________________________________________
+            ASSINATURA DO DIRIGENTE OU SEU REPRESENTANTE LEGAL 
+            </td>
+        </tr>
+    </table>
+{% endblock %}
